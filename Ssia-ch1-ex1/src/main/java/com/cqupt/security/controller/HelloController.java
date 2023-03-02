@@ -33,9 +33,4 @@ public class HelloController {
         return str;
     }
 
-    @GetMapping("/user/update")
-    public String updateManager() {
-        return null;
-    }
-
 }

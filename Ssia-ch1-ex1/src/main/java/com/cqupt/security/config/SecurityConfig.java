@@ -31,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     UsersMapper usersMapper;
 
     @Bean
-    public UserDetailsService userDetailsService() {//注入用户细节服务
+    public MyUserDetailsService userDetailsService() {//注入用户细节服务
         ArrayList<UserDetails> list = new ArrayList<>();
         List<Users> allUsers = usersMapper.getAllUsers();
         for (Users user : allUsers) {

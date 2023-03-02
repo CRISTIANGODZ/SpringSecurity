@@ -27,7 +27,7 @@ import java.util.Arrays;
 public class CustomerAuthenticationProvider implements AuthenticationProvider {
 
     @Autowired
-    private UserDetailsService userDetailsService;
+    private MyUserDetailsService myUserDetailsService;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -37,7 +37,7 @@ public class CustomerAuthenticationProvider implements AuthenticationProvider {
         String name = authentication.getName();
         String password = String.valueOf(authentication.getCredentials());
 
-        UserDetails user = userDetailsService.loadUserByUsername(name);
+        UserDetails user = myUserDetailsService.loadUserByUsername(name);
         if (passwordEncoder.matches(password, user.getPassword())) {
             return new UsernamePasswordAuthenticationToken(name, password, user.getAuthorities());
         } else {
