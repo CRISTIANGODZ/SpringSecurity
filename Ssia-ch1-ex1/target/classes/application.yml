@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: ssia-ch1-ex1
+  datasource:
+    url: jdbc:mysql://localhost:3306/ssia-ch1-ex1?useSSL=false&serverTimezone=UTC
+    username: root
+    password: Zdy!230003#
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: mapper/*.xml
+  type-aliases-package: com/cqupt/security/entity
+  configuration:
+    map-underscore-to-camel-case: true

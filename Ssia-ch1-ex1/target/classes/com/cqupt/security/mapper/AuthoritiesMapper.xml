@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqupt.security.mapper.AuthoritiesMapper">
+    <!--
+    
+  -->
+
+
+    <!--自定义映射-->
+
+    <!--自定义映射-->
+
+
+    <!--下面撰写sql语句-->
+
+    <!--public List<Authorities> getAuthoritiesById(@Param("username") int username);-->
+    <select id="getAuthoritiesById" resultType="Authorities">
+        select `id`, `username`, `authority`
+        from `authorities`
+        where `username` = #{username}
+    </select>
+
+    <!--上面撰写sql语句-->
+
+</mapper>

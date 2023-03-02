@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>登录</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            li {
+                list-style: none;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            body {
+                background-color: rgb(10, 158, 133);
+            }
+
+            .login {
+                text-align: center;
+                margin-top: 100px;
+            }
+
+            .login ul li input[type=text],
+            .login ul li input[type=password] {
+                font-size: 16px;
+            }
+
+            .login ul li input {
+                width: 275px;
+                height: 40px;
+                margin-top: 20px;
+            }
+
+            .login ul li input[type=button] {
+                width: 100px;
+                height: 40px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form action="/login" class="login" method="post">
+            <h2>登录</h2>
+            <ul>
+                <li>
+                    用户名：<input name="username" type="text">
+                </li>
+                <li>
+                    密&emsp;码：<input name="password" type="text">
+                </li>
+                <li><input type="submit"></li>
+                <li>还没有账号？<a href="/templates/login.html">点击注册</a></li>
+            </ul>
+        </form>
+    </body>
+
+</html>

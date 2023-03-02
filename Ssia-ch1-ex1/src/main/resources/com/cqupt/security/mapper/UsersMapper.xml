@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqupt.security.mapper.UsersMapper">
+    <!--
+    
+  -->
+
+
+    <!--自定义映射-->
+
+    <resultMap id="UsersWithAuthorities" type="Users">
+        <id column="uid" property="id"></id>
+        <result column="uusername" property="username"></result>
+        <result column="upassword" property="password"></result>
+        <result column="uenabled" property="enabled"></result>
+        <collection property="authorities" ofType="authorities">
+            <result column="ausername" property="username"></result>
+            <result column="aid" property="id"></result>
+            <result column="authority" property="authority"></result>
+        </collection>
+    </resultMap>
+    <!--自定义映射-->
+
+
+    <!--下面撰写sql语句-->
+
+    <!--List<Users> getAllUsers();-->
+    <select id="getAllUsers" resultMap="UsersWithAuthorities">
+        SELECT users.`id` uid, users.`username` uusername, `password` upassword, `enabled` uenabled, authorities.`id` aid, authorities.`username` ausername, authorities.`authority` authority
+        FROM `users`, `authorities`
+        WHERE users.`username` = authorities.`username`
+    </select>
+
+    <!--上面撰写sql语句-->
+
+</mapper>
