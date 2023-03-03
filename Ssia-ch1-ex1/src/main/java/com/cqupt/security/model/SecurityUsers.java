@@ -34,9 +34,19 @@ public class SecurityUsers implements UserDetails {
         return list;
     }
 
+    public Integer getId() {
+        return this.users.getId();
+    }
+    public void setId(Integer id) {
+        this.users.setId(id);
+    }
     @Override
     public String getPassword() {
         return this.users.getPassword();
+    }
+
+    public void setPassword(String password) {
+        this.users.setPassword(password);
     }
 
     @Override

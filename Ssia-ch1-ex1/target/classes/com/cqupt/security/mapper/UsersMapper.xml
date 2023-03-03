@@ -33,6 +33,13 @@
         WHERE users.`username` = authorities.`username`
     </select>
 
+    <!--void updateUserPassword(@Param("users") Users users);-->
+    <update id="updateUserPassword">
+        update `users`
+        set `password` = #{password}
+        where `username` = #{username}
+    </update>
+
     <!--上面撰写sql语句-->
 
 </mapper>

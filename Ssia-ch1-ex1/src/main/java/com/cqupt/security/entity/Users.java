@@ -19,4 +19,8 @@ public class Users {
     private Integer enabled;
     private List<Authorities> authorities;
 
+    public Users(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 }
